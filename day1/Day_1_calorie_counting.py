@@ -4,14 +4,16 @@ Created on Wed Dec  7 14:43:03 2022
 
 @author: Serguei Smirnov
 """
+import os
 import time
 
 def main():
-    filename = 'day1\input.txt'
+    dirname = os.path.dirname(__file__)
+    filename = r'\input.txt'
     elves = []
     calories = 0
 
-    with open(filename, 'r') as file:
+    with open(dirname + filename, 'r') as file:
         for row in file:
             row = row[:-1] # remove EOL
             # row contains a number

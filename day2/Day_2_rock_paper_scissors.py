@@ -4,6 +4,7 @@ Created on Wed Dec  7 14:43:03 2022
 
 @author: Serguei Smirnov
 """
+import os
 import time
 
 VALUE_LOSE = 0
@@ -49,11 +50,12 @@ def match2(op, my):
     return shape + value_round
 
 def main():
-    filename = 'day2\input.txt'
+    dirname = os.path.dirname(__file__)
+    filename = r'\input.txt'
     my_score = 0
     my_score2 = 0
 
-    with open(filename, 'r') as file:
+    with open(dirname + filename, 'r') as file:
         for row in file:
             row = row[:-1] # remove EOL
             op, my = row.split(' ')
